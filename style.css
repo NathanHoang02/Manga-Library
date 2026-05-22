@@ -24,6 +24,7 @@ li {
 {
   --color-text-primary: #0e1217;
   --color-text-secondary: #525866;
+  --color-delete: #ff3f56; 
 
   --color-bg-primary: #ffffff;
   --color-bg-secondary: #f3f4f6;
@@ -73,6 +74,7 @@ button
   -ms-user-select: none;
   user-select: none;
   font-weight: 600;
+  color: var(--color-text-primary);
 }
 
 .container 
@@ -163,7 +165,7 @@ button
 .notif-btn,
 .theme-btn 
 {
-  border-radius: 12px;
+  border-radius: var(--radius-medium);
 }
 
 .profile-icon 
@@ -297,6 +299,10 @@ button
   border: var(--border-separator);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
+  background-color: var(--color-bg-primary);
+
+  border-radius: var(--radius-large);
+  padding: var(--space-lg);
 }
 
 .main-card:hover 
@@ -314,7 +320,6 @@ button
   justify-content: end;
   gap: var(--space-xs);
 
-  padding: var(--space-lg);
   background-image: linear-gradient(
       to bottom,
       rgba(245, 246, 252, 0),
@@ -326,7 +331,6 @@ button
 
   color: var(--color-bg-primary);
 
-  border-radius: var(--radius-large);
 }
 
 .genre 
@@ -354,12 +358,6 @@ button
 
 .details-btn 
 {
-  padding: var(--space-xs);
-  border-radius: var(--radius-small);
-}
-
-.details-btn 
-{
   padding: var(--padding-btn-md);
   border-radius: var(--radius-medium);
 }
@@ -381,10 +379,6 @@ button
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
-
-  background-color: var(--color-bg-primary);
-  padding: var(--space-sm);
-  border-radius: var(--radius-large);
 }
 
 .manga-container 
@@ -398,6 +392,8 @@ button
 
 .manga-poster 
 {
+  border-radius: var(--radius-small);
+  overflow: hidden;
   width: 60px;
   display: grid;
   place-items: center;
@@ -409,13 +405,22 @@ button
   width: 100%;
 }
 
-.read-now 
+.read-now,
+.view-info,
+#add-manga 
+{
+  border-radius: var(--radius-small);
+}
+
+.read-now,
+#add-manga 
 {
   background-color: var(--btn-default-background);
   color: var(--color-bg-primary);
 }
 
-.read-now:hover 
+.read-now:hover,
+#add-manga:hover 
 {
   background-color: var(--btn-hover-background);
 }
@@ -445,6 +450,92 @@ button
 {
   background-color: lightskyblue;
   grid-area: recommended;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: var(--space-sm);
+}
+
+.card-header 
+{
+  display: flex;
+  justify-content: space-between;
+}
+
+#add-manga 
+{
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+
+  padding: var(--padding-btn-md);
+}
+
+.card-container 
+{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--space-md);
+}
+
+.card-item 
+{
+  display: flex;
+  flex-direction: column;
+
+  border: var(--border-separator);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-large);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.card-item:hover 
+{
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-info 
+{
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+
+  padding: var(--space-sm);
+}
+
+.card-option 
+{
+  display: flex;
+  gap: var(--space-sm);
+
+  margin-top: var(--space-sm);
+}
+.card-option-btn 
+{
+  padding: var(--padding-btn-sm);
+  border-radius: var(--radius-small);
+}
+
+.card-option-btn.remove 
+{
+  border: 1px solid var(--color-delete);
+  background-color: var(--color-bg-primary);
+  color: var(--color-delete);
+}
+
+.manga-cover 
+{
+  width: 100%;
+  display: grid;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+.manga-cover-img 
+{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .popular-mangas 
