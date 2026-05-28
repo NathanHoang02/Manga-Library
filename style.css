@@ -24,7 +24,8 @@ li {
 {
   --color-text-primary: #0e1217;
   --color-text-secondary: #525866;
-  --color-delete: #ff3f56; 
+  --color-delete-bg: #ff3f56; 
+  --color-delete-hover-bg: #e0354a;
 
   --color-bg-primary: #ffffff;
   --color-bg-secondary: #f3f4f6;
@@ -51,7 +52,10 @@ li {
   --radius-x-large: 24px; 
   --radius-round: 50%;
 
-   --border-separator: 1px solid var(--color-border-default);
+  --font-regular: "robotoregular", sans-serif;
+  --weight-bold: 600;
+
+  --border-separator: 1px solid var(--color-border-default);
 
   --btn-default-background: #ac1de4;
   --btn-hover-background: #9e15d9;
@@ -73,7 +77,7 @@ button
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-weight: 600;
+  font-weight: var(--weight-bold);
   color: var(--color-text-primary);
 }
 
@@ -170,8 +174,7 @@ button
 
 .profile-icon 
 {
-  max-width: 100%;
-  width: 100%;
+  width: 40px;
   object-fit: cover;
 }
 
@@ -303,6 +306,9 @@ button
 
   border-radius: var(--radius-large);
   padding: var(--space-lg);
+  gap: var(--space-sm);
+
+  background-color: var(--color-bg-primary);
 }
 
 .main-card:hover 
@@ -384,6 +390,13 @@ button
 .manga-container 
 {
   display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.manga-item 
+{
+  display: flex;
   align-items: center;
   justify-content: space-between;
 
@@ -452,7 +465,6 @@ button
   grid-area: recommended;
   display: grid;
   grid-template-rows: auto 1fr;
-  gap: var(--space-sm);
 }
 
 .card-header 
@@ -518,9 +530,16 @@ button
 
 .card-option-btn.remove 
 {
-  border: 1px solid var(--color-delete);
+  border: 1px solid var(--color-delete-bg);
   background-color: var(--color-bg-primary);
-  color: var(--color-delete);
+  color: var(--color-delete-bg);
+}
+
+.card-option-btn.remove:hover 
+{
+  background-color: var(--color-delete-hover-bg);
+  color: var(--color-bg-primary);
+  border-color: var(--color-delete-hover-bg);
 }
 
 .manga-cover 
@@ -540,6 +559,74 @@ button
 
 .popular-mangas 
 {
-  background-color: lightpink;
   grid-area: popular;
+  display: flex;
+  flex-direction: column;
+}
+
+.popular-container 
+{
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.popular-item 
+{
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas:
+    "manga-poster details"
+    "manga-poster favorite";
+}
+
+.popular-item .manga-poster 
+{
+  grid-area: manga-poster;
+  margin-right: var(--space-sm);
+}
+
+.popular-details 
+{
+  grid-area: details;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-xs);
+}
+
+.favorite 
+{
+  grid-area: favorite;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.favorite img 
+{
+  width: 5%;
+  margin-top: -5px;
+}
+
+.ranking-number 
+{
+  font-weight: var(--weight-bold);
+  background-color: var(--color-bg-secondary);
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  display: grid;
+  place-items: center;
+}
+
+.popular-item:hover .ranking-number
+{
+  color: var(--btn-default-background);
+}
+
+.top-rank 
+{
+  background-color: var(--btn-secondary-background);
+  color: var(--btn-default-background);
 }
