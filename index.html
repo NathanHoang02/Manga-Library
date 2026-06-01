@@ -9,34 +9,35 @@
     <script defer src="script.js"></script>
   </head>
   <body>
-    <div class="container">
+     <div class="container">
       <div class="header">
-        <img src="assets/magnify.svg" alt="Search" class="search-icon"/>
-        <input type="search" class="searchbar"
-        placeholder="Search"/>
-      </div>
+        <div class="search-container">
+          <img
+            src="assets/magnify.svg" alt="Search icon" class="search-icon"/>
+          <input type="search" class="searchbar" placeholder="Search" />
+        </div>
 
-      <div class ="options">
-      <button type ="button" class="notify">
-        <img src="assets/bell-badge.svg" alt="notification" class="notify-icon"/>
+      <div class="options">
+          <button type="button" class="header-btn">
+            <img
+              src="assets/bell-badge.svg" alt="Notification icon" class="notif-icon"/>
+      </button>
+       <button type="button" class="header-btn">
+            <img src="assets/theme-icon.svg" alt="Theme icon" class="theme-icon"/>
       </button>
 
-      <button type ="button" class ="theme">
-        <img src="assets/theme-icon.svg" alt="theme" class="theme-icon"/>
-      </button>
-
-      <button type ="button" class="profile">
-        <img src="assets/eliz.jpg" alt="profile" class="profile-icon"/>
+       <button type="button" id="profile-btn">
+            <img
+              src="assets/eliz.jpg" alt="Profile icon" class="profile-icon"/>
       </button>
       </div>
       </div>
 
       <div class="sidebar">
         <a href="#" class="logo">
-          <img src="assets/logo.png" alt="logo" class="logo-icon"/>
+          <img src="assets/logo.png" alt="" class="logo-icon"/>
           <h2 class="logo-text">Manga Library</h2>
         </a>
-        <h3 class="category">Explore</h3>
         <ul class ="menu">
            <li>
                <a href="#" class="menu-item">
@@ -250,8 +251,12 @@
         </div>
 
         <div class="details">
-          <button type="button" class="details-btn read-now">Read Now</button>
-          <button type="button" class="details-btn view-info">View Details</button>
+           <button type="button" class="primary-btn medium-btn readnow">
+            Read Now
+          </button>
+          <button type="button" class="secondary-btn medium-btn">
+            View Details
+          </button>
         </div>
       </div>
 
@@ -353,12 +358,16 @@
                   </form>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="cancel-btn">Cancel</button>
                   <button
                     type="button"
-                    class="add-manga-confirm"
-                    form="modal-form"
-                  >
+                    class="cancel-btn secondary-btn large-btn">
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    id="add-manga-confirm"
+                    class="primary-btn large-btn"
+                    form="modal-form">
                     Add Manga
                   </button>
                 </div>
@@ -375,8 +384,10 @@
                 <h3 class="card-title">Dragon Ball</h3>
                 <p class="author">Akira Toriyama</p>
                 <div class="card-option">
-                    <button type="button" class="card-option-btn read-now">Read Now</button>
-                <button type="button" class="card-option-btn remove">Remove</button>
+                <button type="button" class="primary-btn small-btn readnow">
+                  Read Now
+                </button>
+                <button type="button" class="remove-btn small-btn">Remove</button>
                 </div>
       </div>
       </div>
@@ -389,8 +400,10 @@
                 <h3 class="card-title">Naruto</h3>
                 <p class="author">Masashi Kishimoto</p>
                 <div class="card-option">
-                  <button type="button" class="card-option-btn read-now">Read Now</button>
-                <button type="button" class="card-option-btn remove">Remove</button>
+                <button type="button" class="primary-btn small-btn readnow">
+                  Read Now
+                </button>
+                <button type="button" class="remove-btn small-btn">Remove</button>
                 </div>
               </div>
         </div>
@@ -403,8 +416,10 @@
                 <h3 class="card-title">One Piece</h3>
                 <p class="author">Eiichiro Oda</p>
                 <div class="card-option">
-                  <button type="button" class="card-option-btn read-now">Read Now</button>
-                <button type="button" class="card-option-btn remove">Remove</button>
+                <button type="button" class="primary-btn small-btn">
+                  Read Now
+                </button>
+                <button type="button" class="remove-btn small-btn">Remove</button>
               </div>
         </div>
           </div>
@@ -424,7 +439,9 @@
             <a href="" class="manga-title">Blue Lock</a>
             <p class="genre">Shounen, Sports</p>
             </div>
-            <button type="button" class="details-btn read-now">Read Now</button>
+            <button type="button" class="primary-btn small-btn readnow">
+              Read Now
+          </button>
           </div>
           
           <div class="manga-item">
@@ -436,7 +453,9 @@
               <a href="" class="manga-title">Sakamoto Days</a>
               <p class="genre">Action, Comedy</p>
             </div>
-            <button type="button" class="details-btn read-now">Read Now</button>
+            <button type="button" class="primary-btn small-btn readnow">
+              Read Now
+            </button>
           </div>
 
           <div class="manga-item">
@@ -448,7 +467,9 @@
               <a href="" class="manga-title">Bleach</a>
               <p class="genre">Action, Adventure</p>
             </div>
-            <button type="button" class="details-btn read-now">Read Now</button>
+            <button type="button" class="primary-btn small-btn readnow">
+              Read Now
+            </button>
           </div>
 
           <div class="manga-item">
@@ -460,7 +481,9 @@
               <a href="" class="manga-title">Blue Box</a>
               <p class="genre">Romance, Sports</p>
             </div>
-            <button type="button" class="details-btn read-now">Read Now</button>
+             <button type="button" class="primary-btn small-btn readnow">
+              Read Now
+            </button>
           </div>
         </div>
 
